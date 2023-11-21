@@ -11,6 +11,7 @@ export default function Withdraw({ allAccounts, getAllAccounts }) {
     if (total < 0) {
       setError("No enough founds");
     } else {
+      setError("");
       await updateAccount(id, total.toFixed(2));
       getAllAccounts();
     }

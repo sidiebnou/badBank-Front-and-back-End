@@ -15,7 +15,7 @@ export default function NotSignedInNav() {
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="" onClick={() => navigate("/")}>
           Bad Bank
         </a>
         <button

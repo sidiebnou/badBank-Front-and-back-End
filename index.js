@@ -30,7 +30,7 @@ app.get("/api/getAllAccounts", checkAuth, async function (req, res) {
 app.post("/api/updateAccount", checkAuth, async function (req, res) {
   const body = req.body;
   await updateAccount(body.id, body.balance);
-  res.status(200);
+  res.status(200).json({ updated: true });
 });
 
 app.post("/api/createAccount", checkAuth, async function (req, res) {
@@ -41,10 +41,11 @@ app.post("/api/createAccount", checkAuth, async function (req, res) {
   res.json(allAccounts);
 });
 
-app.delete("/api/deleteAccount/:id", checkAuth, function (req, res) {
+app.delete("/api/deleteAccount/:id", checkAuth, async function (req, res) {
   // check if account exists
-  const updatedAccount = deleteAccount(req.params.id);
-  res.status(201);
+  const updatedAccount = await deleteAccount(req.params.id);
+
+  res.json({ deleteAccount: true });
 });
 
 app.get("*", (req, res) => {

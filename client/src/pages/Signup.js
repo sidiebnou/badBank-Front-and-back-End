@@ -98,7 +98,7 @@ export default function SignupPage() {
                       />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary mt-2" type="submit">
                       Sign up
                     </Button>
                   </Form>

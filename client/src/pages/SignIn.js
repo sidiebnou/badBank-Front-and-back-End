@@ -63,7 +63,7 @@ export default function SignInPage() {
                   />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button variant="primary  mt-2" type="submit">
                   Login
                 </Button>
               </Form>
